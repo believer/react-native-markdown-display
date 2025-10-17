@@ -1,6 +1,6 @@
-let uuid = new Date().getTime();
+let uuid = Date.now()
 
 export default function getUniqueID() {
-  uuid++;
-  return `rnmr_${uuid.toString(16)}`;
+	uuid++
+	return `rnmr_${uuid.toString(16)}`
 }
