@@ -1,4 +1,4 @@
-import textStyleProps from "../data/textStyleProps"
+import textStyleProps from '../data/textStyleProps'
 
 export default function removeTextStyleProps(style) {
 	const intersection = textStyleProps.filter((value) =>

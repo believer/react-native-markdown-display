@@ -3,21 +3,21 @@
  * @author Mient-jan Stelling + contributors
  */
 
-import MarkdownIt from "markdown-it"
-import PropTypes from "prop-types"
-import React, { useMemo } from "react"
-import { StyleSheet, Text } from "react-native"
-import AstRenderer from "./lib/AstRenderer"
-import textStyleProps from "./lib/data/textStyleProps"
-import parser from "./lib/parser"
-import renderRules from "./lib/renderRules"
-import { styles } from "./lib/styles"
-import getUniqueID from "./lib/util/getUniqueID"
-import hasParents from "./lib/util/hasParents"
-import openUrl from "./lib/util/openUrl"
-import removeTextStyleProps from "./lib/util/removeTextStyleProps"
-import { stringToTokens } from "./lib/util/stringToTokens"
-import tokensToAST from "./lib/util/tokensToAST"
+import MarkdownIt from 'markdown-it'
+import PropTypes from 'prop-types'
+import React, { useMemo } from 'react'
+import { StyleSheet, Text } from 'react-native'
+import AstRenderer from './lib/AstRenderer'
+import textStyleProps from './lib/data/textStyleProps'
+import parser from './lib/parser'
+import renderRules from './lib/renderRules'
+import { styles } from './lib/styles'
+import getUniqueID from './lib/util/getUniqueID'
+import hasParents from './lib/util/hasParents'
+import openUrl from './lib/util/openUrl'
+import removeTextStyleProps from './lib/util/removeTextStyleProps'
+import { stringToTokens } from './lib/util/stringToTokens'
+import tokensToAST from './lib/util/tokensToAST'
 
 export {
 	getUniqueID,
@@ -90,23 +90,23 @@ const getRenderer = (
 ) => {
 	if (renderer && rules) {
 		console.warn(
-			"react-native-markdown-display you are using renderer and rules at the same time. This is not possible, props.rules is ignored",
+			'react-native-markdown-display you are using renderer and rules at the same time. This is not possible, props.rules is ignored',
 		)
 	}
 
 	if (renderer && style) {
 		console.warn(
-			"react-native-markdown-display you are using renderer and style at the same time. This is not possible, props.style is ignored",
+			'react-native-markdown-display you are using renderer and style at the same time. This is not possible, props.style is ignored',
 		)
 	}
 
 	// these checks are here to prevent extra overhead.
 	if (renderer) {
-		if (!(typeof renderer === "function") || renderer instanceof AstRenderer) {
+		if (!(typeof renderer === 'function') || renderer instanceof AstRenderer) {
 			return renderer
 		} else {
 			throw new Error(
-				"Provided renderer is not compatible with function or AstRenderer. please change",
+				'Provided renderer is not compatible with function or AstRenderer. please change',
 			)
 		}
 	} else {
@@ -143,13 +143,13 @@ const Markdown = React.memo(
 		maxTopLevelChildren = null,
 		topLevelMaxExceededItem = <Text key="dotdotdot">...</Text>,
 		allowedImageHandlers = [
-			"data:image/png;base64",
-			"data:image/gif;base64",
-			"data:image/jpeg;base64",
-			"https://",
-			"http://",
+			'data:image/png;base64',
+			'data:image/gif;base64',
+			'data:image/jpeg;base64',
+			'https://',
+			'http://',
 		],
-		defaultImageHandler = "https://",
+		defaultImageHandler = 'https://',
 		debugPrintTree = false,
 	}) => {
 		const momoizedRenderer = useMemo(
@@ -188,7 +188,7 @@ const Markdown = React.memo(
 	},
 )
 
-Markdown.displayName = "Markdown"
+Markdown.displayName = 'Markdown'
 
 Markdown.propTypes = {
 	children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]).isRequired,
@@ -208,20 +208,20 @@ Markdown.propTypes = {
 			return
 		}
 
-		if (typeof prop === "object") {
+		if (typeof prop === 'object') {
 			invalidProps = Object.keys(prop).filter(
-				(key) => typeof prop[key] !== "function",
+				(key) => typeof prop[key] !== 'function',
 			)
 		}
 
-		if (typeof prop !== "object") {
+		if (typeof prop !== 'object') {
 			return new Error(
 				`Invalid prop \`${propName}\` supplied to \`${componentName}\`. Must be of shape {[index:string]:function} `,
 			)
 		} else if (invalidProps.length > 0) {
 			return new Error(
 				`Invalid prop \`${propName}\` supplied to \`${componentName}\`. These ` +
-					`props are not of type function \`${invalidProps.join(", ")}\` `,
+					`props are not of type function \`${invalidProps.join(', ')}\` `,
 			)
 		}
 	},

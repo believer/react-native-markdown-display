@@ -1,7 +1,7 @@
-import { StyleSheet } from "react-native"
-import textStyleProps from "./data/textStyleProps"
-import convertAdditionalStyles from "./util/convertAdditionalStyles"
-import getUniqueID from "./util/getUniqueID"
+import { StyleSheet } from 'react-native'
+import textStyleProps from './data/textStyleProps'
+import convertAdditionalStyles from './util/convertAdditionalStyles'
+import getUniqueID from './util/getUniqueID'
 
 export default class AstRenderer {
 	/**
@@ -58,7 +58,7 @@ export default class AstRenderer {
 		const parents = [...parentNodes]
 
 		if (this._debugPrintTree === true) {
-			let str = ""
+			let str = ''
 
 			for (let a = 0; a < parents.length; a++) {
 				str = `${str}-`
@@ -76,7 +76,7 @@ export default class AstRenderer {
 
 		// render any special types of nodes that have different renderRule function signatures
 
-		if (node.type === "link" || node.type === "blocklink") {
+		if (node.type === 'link' || node.type === 'blocklink') {
 			return renderFunction(
 				node,
 				children,
@@ -86,7 +86,7 @@ export default class AstRenderer {
 			)
 		}
 
-		if (node.type === "image") {
+		if (node.type === 'image') {
 			return renderFunction(
 				node,
 				children,
@@ -104,7 +104,7 @@ export default class AstRenderer {
 
 		// we have to handle list_item seperately here because they have some child
 		// pseudo classes that need the additional style props from parents passed down to them
-		if (children.length === 0 || node.type === "list_item") {
+		if (children.length === 0 || node.type === 'list_item') {
 			const styleObj = {}
 
 			for (let a = parentNodes.length - 1; a > -1; a--) {
@@ -113,7 +113,7 @@ export default class AstRenderer {
 
 				if (
 					parentNodes[a].attributes?.style &&
-					typeof parentNodes[a].attributes.style === "string"
+					typeof parentNodes[a].attributes.style === 'string'
 				) {
 					refStyle = convertAdditionalStyles(parentNodes[a].attributes.style)
 				}
@@ -126,12 +126,12 @@ export default class AstRenderer {
 					}
 
 					// workaround for list_items and their content cascading down the tree
-					if (parentNodes[a].type === "list_item") {
+					if (parentNodes[a].type === 'list_item') {
 						let contentStyle = {}
 
-						if (parentNodes[a + 1].type === "bullet_list") {
+						if (parentNodes[a + 1].type === 'bullet_list') {
 							contentStyle = this._style.bullet_list_content
-						} else if (parentNodes[a + 1].type === "ordered_list") {
+						} else if (parentNodes[a + 1].type === 'ordered_list') {
 							contentStyle = this._style.ordered_list_content
 						}
 
@@ -177,7 +177,7 @@ export default class AstRenderer {
 	 * @return {*}
 	 */
 	render = (nodes) => {
-		const root = { type: "body", key: getUniqueID(), children: nodes }
+		const root = { type: 'body', key: getUniqueID(), children: nodes }
 		return this.renderNode(root, [], true)
 	}
 }

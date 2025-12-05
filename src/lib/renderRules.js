@@ -1,8 +1,8 @@
-import { Platform, Pressable, StyleSheet, View } from "react-native"
-import { Image } from "./components/Image"
-import textStyleProps from "./data/textStyleProps"
-import hasParents from "./util/hasParents"
-import openUrl from "./util/openUrl"
+import { Platform, Pressable, StyleSheet, View } from 'react-native'
+import { Image } from './components/Image'
+import textStyleProps from './data/textStyleProps'
+import hasParents from './util/hasParents'
+import openUrl from './util/openUrl'
 
 const renderRules = (Text) => ({
 	// when unknown elements are introduced, so it wont break
@@ -106,7 +106,7 @@ const renderRules = (Text) => ({
 			}
 		}
 
-		if (hasParents(parent, "bullet_list")) {
+		if (hasParents(parent, 'bullet_list')) {
 			return (
 				<View key={node.key} style={styles._VIEW_SAFE_list_item}>
 					<Text
@@ -114,9 +114,9 @@ const renderRules = (Text) => ({
 						accessible={false}
 					>
 						{Platform.select({
-							android: "\u2022",
-							ios: "\u00B7",
-							default: "\u2022",
+							android: '\u2022',
+							ios: '\u00B7',
+							default: '\u2022',
 						})}
 					</Text>
 					<View style={styles._VIEW_SAFE_bullet_list_content}>{children}</View>
@@ -124,9 +124,9 @@ const renderRules = (Text) => ({
 			)
 		}
 
-		if (hasParents(parent, "ordered_list")) {
+		if (hasParents(parent, 'ordered_list')) {
 			const orderedListIndex = parent.findIndex(
-				(el) => el.type === "ordered_list",
+				(el) => el.type === 'ordered_list',
 			)
 
 			const orderedList = parent[orderedListIndex]
@@ -168,8 +168,8 @@ const renderRules = (Text) => ({
 		let { content } = node
 
 		if (
-			typeof node.content === "string" &&
-			node.content.charAt(node.content.length - 1) === "\n"
+			typeof node.content === 'string' &&
+			node.content.charAt(node.content.length - 1) === '\n'
 		) {
 			content = node.content.substring(0, node.content.length - 1)
 		}
@@ -185,8 +185,8 @@ const renderRules = (Text) => ({
 		let { content } = node
 
 		if (
-			typeof node.content === "string" &&
-			node.content.charAt(node.content.length - 1) === "\n"
+			typeof node.content === 'string' &&
+			node.content.charAt(node.content.length - 1) === '\n'
 		) {
 			content = node.content.substring(0, node.content.length - 1)
 		}
@@ -232,7 +232,7 @@ const renderRules = (Text) => ({
 	// Links
 	link: (node, children, _parent, styles, onLinkPress) => (
 		<Pressable
-			accessibilityRole={"link"}
+			accessibilityRole={'link'}
 			key={node.key}
 			onPress={() => openUrl(node.attributes.href, onLinkPress)}
 		>
@@ -241,7 +241,7 @@ const renderRules = (Text) => ({
 	),
 	blocklink: (node, children, _parent, styles, onLinkPress) => (
 		<Pressable
-			accessibilityRole={"link"}
+			accessibilityRole={'link'}
 			key={node.key}
 			onPress={() => openUrl(node.attributes.href, onLinkPress)}
 			style={styles.blocklink}
@@ -304,12 +304,12 @@ const renderRules = (Text) => ({
 	),
 	hardbreak: (node, _children, _parent, styles) => (
 		<Text key={node.key} style={styles.hardbreak}>
-			{"\n"}
+			{'\n'}
 		</Text>
 	),
 	softbreak: (node, _children, _parent, styles) => (
 		<Text key={node.key} style={styles.softbreak}>
-			{"\n"}
+			{'\n'}
 		</Text>
 	),
 	// Believe these are never used but retained for completeness

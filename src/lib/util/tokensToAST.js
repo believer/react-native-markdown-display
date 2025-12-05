@@ -1,5 +1,5 @@
-import getTokenTypeByToken from "./getTokenTypeByToken"
-import getUniqueID from "./getUniqueID"
+import getTokenTypeByToken from './getTokenTypeByToken'
+import getUniqueID from './getUniqueID'
 
 /**
  *
@@ -55,9 +55,9 @@ export default function tokensToAST(tokens) {
 
 		if (
 			!(
-				astNode.type === "text" &&
+				astNode.type === 'text' &&
 				astNode.children.length === 0 &&
-				astNode.content === ""
+				astNode.content === ''
 			)
 		) {
 			astNode.index = children.length

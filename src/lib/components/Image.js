@@ -1,5 +1,5 @@
-import React from "react"
-import { Image as RNImage } from "react-native"
+import React from 'react'
+import { Image as RNImage } from 'react-native'
 
 export function Image(props) {
 	const [layout, setLayout] = React.useState(0)
