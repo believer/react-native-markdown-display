@@ -1,5 +1,5 @@
 import { Platform, Pressable, StyleSheet, View } from "react-native"
-import FitImage from "react-native-fit-image"
+import { Image } from "./components/Image"
 import textStyleProps from "./data/textStyleProps"
 import hasParents from "./util/hasParents"
 import openUrl from "./util/openUrl"
@@ -283,7 +283,7 @@ const renderRules = (Text) => ({
 			imageProps.accessibilityLabel = alt
 		}
 
-		return <FitImage key={node.key} {...imageProps} />
+		return <Image key={node.key} {...imageProps} />
 	},
 
 	// Text Output

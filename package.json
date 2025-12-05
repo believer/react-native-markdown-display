@@ -8,6 +8,9 @@
 		"format": "biome check --write",
 		"lint": "biome check"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/believer/react-native-markdown-display.git"
@@ -29,8 +32,7 @@
 	"dependencies": {
 		"css-to-react-native": "3.2.0",
 		"markdown-it": "14.1.0",
-		"prop-types": "15.8.1",
-		"react-native-fit-image": "1.5.5"
+		"prop-types": "15.8.1"
 	},
 	"peerDependencies": {
 		"react": ">=19",

@@ -7,7 +7,6 @@ import MarkdownIt from "markdown-it"
 import PropTypes from "prop-types"
 import React, { useMemo } from "react"
 import { StyleSheet, Text } from "react-native"
-import FitImage from "react-native-fit-image"
 import AstRenderer from "./lib/AstRenderer"
 import textStyleProps from "./lib/data/textStyleProps"
 import parser from "./lib/parser"
@@ -32,7 +31,6 @@ export {
 	MarkdownIt,
 	styles,
 	removeTextStyleProps,
-	FitImage,
 	textStyleProps,
 }
 
