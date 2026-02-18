@@ -125,7 +125,7 @@ const getRenderer = (
 	}
 }
 
-const Markdown = React.memo(
+export const Markdown = React.memo(
 	({
 		children,
 		textcomponent = Text,
@@ -186,5 +186,3 @@ const Markdown = React.memo(
 )
 
 Markdown.displayName = 'Markdown'
-
-export default Markdown

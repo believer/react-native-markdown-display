@@ -1,3 +1,4 @@
+// tslint:disable:max-classes-per-file
 import MarkdownIt from "markdown-it"
 import Token from "markdown-it/lib/token"
 import { ComponentType, ReactNode } from "react"
@@ -99,6 +100,5 @@ export interface MarkdownProps {
 }
 
 type MarkdownStatic = ComponentType<MarkdownProps>
-export type Markdown = MarkdownStatic
+export const Markdown: MarkdownStatic
 export { MarkdownIt }
-export default Markdown
