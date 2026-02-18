@@ -30,7 +30,6 @@
 	},
 	"homepage": "https://github.com/believer/react-native-markdown-display",
 	"dependencies": {
-		"css-to-react-native": "3.2.0",
 		"markdown-it": "14.1.1"
 	},
 	"peerDependencies": {

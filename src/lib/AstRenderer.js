@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native'
 import textStyleProps from './data/textStyleProps'
-import convertAdditionalStyles from './util/convertAdditionalStyles'
 import getUniqueID from './util/getUniqueID'
 
 export default class AstRenderer {
@@ -110,13 +109,6 @@ export default class AstRenderer {
 			for (let a = parentNodes.length - 1; a > -1; a--) {
 				// grab and additional attributes specified by markdown-it
 				let refStyle = {}
-
-				if (
-					parentNodes[a].attributes?.style &&
-					typeof parentNodes[a].attributes.style === 'string'
-				) {
-					refStyle = convertAdditionalStyles(parentNodes[a].attributes.style)
-				}
 
 				// combine in specific styles for the object
 				if (this._style[parentNodes[a].type]) {
