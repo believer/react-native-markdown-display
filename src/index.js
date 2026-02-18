@@ -13,14 +13,12 @@ import renderRules from './lib/renderRules'
 import { styles } from './lib/styles'
 import getUniqueID from './lib/util/getUniqueID'
 import hasParents from './lib/util/hasParents'
-import openUrl from './lib/util/openUrl'
 import removeTextStyleProps from './lib/util/removeTextStyleProps'
 import { stringToTokens } from './lib/util/stringToTokens'
 import tokensToAST from './lib/util/tokensToAST'
 
 export {
 	getUniqueID,
-	openUrl,
 	hasParents,
 	renderRules,
 	AstRenderer,
