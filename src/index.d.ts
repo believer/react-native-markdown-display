@@ -1,6 +1,5 @@
 // tslint:disable:max-classes-per-file
-import MarkdownIt from "markdown-it"
-import Token from "markdown-it/lib/token"
+import MarkdownIt, { type MarkdownIt as MarkdownItInstance, type Token } from "markdown-it"
 import { ComponentType, ReactNode } from "react"
 import { StyleSheet, View } from "react-native"
 
@@ -92,7 +91,7 @@ export interface MarkdownProps {
 	rules?: RenderRules
 	style?: StyleSheet.NamedStyles<any>
 	renderer?: AstRenderer
-	markdownit?: MarkdownIt
+	markdownit?: MarkdownItInstance
 	mergeStyle?: boolean
 	debugPrintTree?: boolean
 	onLinkPress?: (url: string) => boolean

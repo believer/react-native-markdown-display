@@ -30,19 +30,15 @@
 	},
 	"homepage": "https://github.com/believer/react-native-markdown-display",
 	"dependencies": {
-		"markdown-it": "14.1.1"
+		"markdown-it": "15.0.3"
 	},
 	"peerDependencies": {
 		"react": ">=19",
-		"react-native": ">=0.80"
+		"react-native": ">=0.88"
 	},
 	"devDependencies": {
-		"@babel/core": "7.29.0",
-		"@biomejs/biome": "2.4.0",
-		"@types/markdown-it": "14.1.2",
-		"@types/react-native": "0.73.0",
-		"metro-react-native-babel-preset": "0.77.0",
-		"typescript": "5.9.3"
+		"@biomejs/biome": "2.6.6",
+		"typescript": "7.0.2"
 	},
 	"directories": {
 		"doc": "doc"

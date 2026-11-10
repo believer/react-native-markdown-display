@@ -14,10 +14,5 @@ export function Image(props) {
 		return null
 	}
 
-	return (
-		<RNImage
-			{...props}
-			style={{ flexGrow: 1, aspectRatio: 16/9 }}
-		/>
-	)
+	return <RNImage {...props} style={{ flexGrow: 1, aspectRatio: 16 / 9 }} />
 }

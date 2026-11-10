@@ -18,17 +18,17 @@ import { stringToTokens } from './lib/util/stringToTokens'
 import tokensToAST from './lib/util/tokensToAST'
 
 export {
+	AstRenderer,
 	getUniqueID,
 	hasParents,
-	renderRules,
-	AstRenderer,
-	parser,
-	stringToTokens,
-	tokensToAST,
 	MarkdownIt,
-	styles,
+	parser,
 	removeTextStyleProps,
+	renderRules,
+	stringToTokens,
+	styles,
 	textStyleProps,
+	tokensToAST,
 }
 
 // we use StyleSheet.flatten here to make sure we have an object, in case someone
